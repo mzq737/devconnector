@@ -29,7 +29,7 @@ router.get(
   }
 );
 
-// @route   POST api/profile/me
+// @route   POST api/profile
 // @desc    Create or update user profile
 // @access  Private
 router.post(
@@ -65,45 +65,18 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
 
-    // const standardFields = [
-    //   'company',
-    //   'website',
-    //   'location',
-    //   'bio',
-    //   'status',
-    //   'githubusername'
-    // ];
-
-    // const socialFields = [
-    //   'youtube',
-    //   'facebook',
-    //   'twitter',
-    //   'instagram',
-    //   'linkedin'
-    // ];
-
     if (company) profileFields.company = company;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
-
-    // standardFields.forEach(field => {
-    //   if (req.body[field]) profileFields[field] = req.body[field];
-    //   if (req.body['skills']) profileFields.skills = skills.split(',').map(skill => skill.trim());
-    // });
-
     if (skills) {
       profileFields.skills = skills.split(',').map(skill => skill.trim());
     }
 
     // Build social object
     profileFields.social = {};
-
-    // socialFields.forEach(field => {
-    //   if (req.body[field]) profileFields.social[field] = req.body[field];
-    // });
 
     if (youtube) profileFields.social.youtube = youtube;
     if (twitter) profileFields.social.twitter = twitter;
@@ -137,7 +110,7 @@ router.post(
   }
 );
 
-// @route   GET api/profile/me
+// @route   GET api/profile
 // @sesc    Get all profiles
 // @access  Public
 router.get(
