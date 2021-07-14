@@ -8,7 +8,7 @@ import ProfileGitHub from './ProfileGitHub';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import { getProfileById } from '../../actions/profile';
+import { getProfileById } from '../../redux/profile/profile.actions';
 
 const Profile = ({ getProfileById, profile: { profile, loading }, auth, match }) => {
 

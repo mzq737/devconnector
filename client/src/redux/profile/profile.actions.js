@@ -1,6 +1,13 @@
 import axios from 'axios';
-import { setAlert } from './alert';
-import { ACCOUNT_DELETED, CLEAR_PROFILE, GET_PROFILE, GET_PROFILES, PROFILE_ERROR, UPDATE_PROFILE, GET_REPOS } from './types';
+import { setAlert } from '../alert/alert.actions';
+import {
+  CLEAR_PROFILE,
+  GET_PROFILE, GET_PROFILES,
+  PROFILE_ERROR,
+  UPDATE_PROFILE,
+  GET_REPOS
+} from './profile.types';
+import { ACCOUNT_DELETED } from '../auth/auth.types';
 
 // Get current users profile
 export const getCurrentProfile = () => async dispatch => {

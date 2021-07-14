@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import { getGitHubRepos } from '../../actions/profile';
+import { getGitHubRepos } from '../../redux/profile/profile.actions';
 
 const ProfileGitHub = ({ username, getGitHubRepos, repos }) => {
   useEffect(() => {

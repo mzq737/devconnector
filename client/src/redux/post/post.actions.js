@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setAlert } from './alert';
+import { setAlert } from '../alert/alert.actions';
 import {
   DELETE_POST,
   GET_POSTS,
@@ -9,7 +9,7 @@ import {
   GET_POST,
   ADD_COMMENT,
   REMOVE_COMMENT
-} from './types';
+} from './post.types';
 
 // Get posts
 export const getPosts = () => async dispatch => {

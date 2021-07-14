@@ -5,9 +5,9 @@ import Landing from './components/layout/Landing';
 import Routes from './components/routing/Routes';
 // Redux
 import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/auth';
-import setAuthToken from './utils/setAuthToken';
+import store from '../src/redux/store';
+import { loadUser } from '../src/redux/auth/auth.actions';
+import setAuthToken from '../src/redux/utils/setAuthToken';
 
 import './App.css';
 
