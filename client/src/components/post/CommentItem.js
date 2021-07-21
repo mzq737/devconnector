@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import { deleteComment } from '../../redux/post/post.actions';
 
-const CommentItem = ({ postId,
+const CommentItem = ({
+  postId,
   comment: { _id, text, name, avatar, user, date },
   auth,
   deleteComment
