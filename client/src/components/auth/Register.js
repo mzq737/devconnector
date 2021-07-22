@@ -17,9 +17,17 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const checkUserNameIsValid = (name) => {
+    return /\d/.test(name);
+  };
+
   const onSubmit = async e => {
     e.preventDefault();
-    if (password !== password2) {
+    console.log('called');
+
+    if (!checkUserNameIsValid(name)) {
+      setAlert('User invalid', 'danger',);
+    } else if (password !== password2) {
       setAlert('Passwords do not match', 'danger',);
     } else {
       register({ name, email, password });
@@ -74,7 +82,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <input
+          type="submit"
+          className={checkUserNameIsValid(name) ? 'btn btn-primary' : 'btn-primary-disabled btn-disabled'}
+          value={checkUserNameIsValid(name) ? "Register" : "InValid User Name"}
+        />
       </form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
